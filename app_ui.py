@@ -51,27 +51,27 @@ def main_page():
     with ui.column().classes('p-4'):
         ui.label('Welcome to the main content area!').classes('text-lg')
 
-        # Quick navigation buttons (these navigate to routes — create pages for them)
-        with ui.row().classes('items-center gap-4'):
-            ui.button('Dashboard', on_click=lambda: ui.navigate('/dashboard'))
-            ui.button('Settings', on_click=lambda: ui.navigate('/settings'))
-            ui.button('Profile', on_click=lambda: ui.navigate('/profile'))
-            ui.button('Help', on_click=lambda: ui.navigate('/help'))
+        # # Quick navigation buttons (these navigate to routes — create pages for them)
+        # with ui.row().classes('items-center gap-4'):
+        #     ui.button('Dashboard', on_click=lambda: ui.navigate('/dashboard'))
+        #     ui.button('Settings', on_click=lambda: ui.navigate('/settings'))
+        #     ui.button('Profile', on_click=lambda: ui.navigate('/profile'))
+        #     ui.button('Help', on_click=lambda: ui.navigate('/help'))
 
-        # Dropdown / select example
-        ui.select(['Report A', 'Report B', 'Report C'], label='Choose report',
-              on_change=lambda e: ui.notify(f'Selected: {e.value}'))
+        # # Dropdown / select example
+        # ui.select(['Report A', 'Report B', 'Report C'], label='Choose report',
+        #       on_change=lambda e: ui.notify(f'Selected: {e.value}'))
 
-        # Tabs for a sample platform
-        with ui.tabs() as platform_tabs:
-            with ui.tab('Overview'):
-                ui.label('Platform A — Overview').classes('text-lg')
-                ui.markdown('Summary content and KPIs go here.')
-            with ui.tab('Reports'):
-                ui.label('Platform A — Reports')
-                ui.button('Open Report A', on_click=lambda: ui.navigate('/reports/a'))
-            with ui.tab('Settings'):
-                ui.label('Platform A — Settings')
+        # # Tabs for a sample platform
+        # with ui.tabs() as platform_tabs:
+        #     with ui.tab('Overview'):
+        #         ui.label('Platform A — Overview').classes('text-lg')
+        #         ui.markdown('Summary content and KPIs go here.')
+        #     with ui.tab('Reports'):
+        #         ui.label('Platform A — Reports')
+        #         ui.button('Open Report A', on_click=lambda: ui.navigate('/reports/a'))
+        #     with ui.tab('Settings'):
+        #         ui.label('Platform A — Settings')
         line_fig = px.line(df, x='Month', y='Revenue', title='Monthly Revenue')
         ui.plotly(line_fig)
 
